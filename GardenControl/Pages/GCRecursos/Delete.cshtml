@@ -1,0 +1,58 @@
+﻿@page
+@model GardenControl.Pages.GCRecursos.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Recurso</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recurso.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Recurso.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recurso.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Recurso.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recurso.FechaCreacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Recurso.FechaCreacion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recurso.Orden)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Recurso.Orden)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recurso.Activo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Recurso.Activo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recurso.Leccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Recurso.Leccion.Nombre)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Recurso.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

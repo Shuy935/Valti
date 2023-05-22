@@ -1,0 +1,66 @@
+﻿@page
+@model GardenControl.Pages.GCRecursos.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Recurso[0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recurso[0].Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recurso[0].FechaCreacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recurso[0].Orden)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recurso[0].Activo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recurso[0].Leccion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Recurso) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCreacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Orden)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Activo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Leccion.Nombre)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,60 @@
+﻿@page
+@model GardenControl.Pages.GCLecciones.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Leccion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Leccion.Id" />
+            <div class="form-group">
+                <label asp-for="Leccion.Nombre" class="control-label"></label>
+                <input asp-for="Leccion.Nombre" class="form-control" />
+                <span asp-validation-for="Leccion.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leccion.Descripcion" class="control-label"></label>
+                <input asp-for="Leccion.Descripcion" class="form-control" />
+                <span asp-validation-for="Leccion.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leccion.Orden" class="control-label"></label>
+                <input asp-for="Leccion.Orden" class="form-control" />
+                <span asp-validation-for="Leccion.Orden" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leccion.FechaCreacion" class="control-label"></label>
+                <input asp-for="Leccion.FechaCreacion" class="form-control" />
+                <span asp-validation-for="Leccion.FechaCreacion" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Leccion.Activo" /> @Html.DisplayNameFor(model => model.Leccion.Activo)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leccion.UnidadId" class="control-label"></label>
+                <select asp-for="Leccion.UnidadId" class="form-control" asp-items="ViewBag.UnidadId"></select>
+                <span asp-validation-for="Leccion.UnidadId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
